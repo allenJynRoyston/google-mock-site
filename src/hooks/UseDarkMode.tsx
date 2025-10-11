@@ -7,35 +7,24 @@ export default function useDarkMode() {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
-    // Only run on client side
-    if (typeof window !== 'undefined') {
-      // Check if user has a preference stored
-      const stored = localStorage.getItem('darkMode');
-      if (stored) {
-        setIsDarkMode(JSON.parse(stored));
-      } else {
-        // Check system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        setIsDarkMode(prefersDark);
+    if (typeof window !== 'undefined' && !isLoaded) {      
+      const lsDarkMode = localStorage.getItem('darkMode');
+      if (lsDarkMode) {
+        setIsDarkMode(JSON.parse(lsDarkMode));
+      } else {        
+        setIsDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
       }
       setIsLoaded(true);
     }
   }, []);
 
-  useEffect(() => {
-    // Only update DOM and localStorage after component is loaded on client
-    if (isLoaded && typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
-  }, [isDarkMode, isLoaded]);
+
 
   const toggleDarkMode = () => {
-    console.log('Toggle called, current isDarkMode:', isDarkMode);
+    if (isLoaded) {      
+      localStorage.setItem('darkMode', JSON.stringify(!isDarkMode));
+    }
+
     setIsDarkMode(!isDarkMode);
   };
 

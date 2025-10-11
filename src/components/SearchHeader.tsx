@@ -8,7 +8,7 @@ export default function SearchHeader({
         isDarkMode ? 'border-[#5f6368]' : 'border-[#e8eaed]'
       }`}>
         <div className="flex items-center pl-6 pr-0 py-4">
-          <a href="/" className="text-2xl font-light mr-8">
+          <a href="/" className="text-2xl font-light mr-2 flex-shrink-0">
             <span className="text-[#4285f4]">A</span>
             <span className="text-[#ea4335]">l</span>
             <span className="text-[#fbbc05]">l</span>
@@ -17,18 +17,18 @@ export default function SearchHeader({
           </a>
           
           {/* Search bar */}
-          <div className={`flex-1 max-w-2xl mx-8 border rounded-full px-4 py-2 ${
+          <div className={`flex-1 max-w-[600px] min-w-0 mx-2 md:mx-8 border rounded-full px-4 py-2 ${
             isDarkMode 
               ? 'bg-[#303134] border-[#5f6368]' 
               : 'bg-white border-[#dfe1e5]'
           }`}>
-            <span className={isDarkMode ? 'text-[#e8eaed]' : 'text-[#3c4043]'}>
+            <span className={`block truncate ${isDarkMode ? 'text-[#e8eaed]' : 'text-[#3c4043]'}`}>
               {searchTerm}
             </span>
           </div>
 
           {/* Right side buttons */}
-          <div className="flex items-center gap-4 ml-auto pr-4">
+          <div className="flex items-center gap-4 flex-shrink-0 ml-auto pr-4">
             <button 
               onClick={toggleDarkMode}
               className={`text-sm hover:underline ${
@@ -39,7 +39,6 @@ export default function SearchHeader({
               AR
             </div>
             </button>
-
           </div>
         </div>
 

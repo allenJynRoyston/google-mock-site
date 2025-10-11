@@ -22,3 +22,10 @@ export interface ILogoProps {
 export interface ISearchBarProps {
   isDarkMode: boolean;
 }
+
+export interface ISearchResultPage {
+  url: string;
+  title: string;
+  description: string;
+  relatedLinks?: string[];
+}

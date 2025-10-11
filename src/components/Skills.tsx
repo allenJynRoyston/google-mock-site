@@ -5,7 +5,7 @@ export default function Skills({isDarkMode}: {isDarkMode: boolean}) {
     { name: "React", href: "https://react.dev", colorLight: "#ea4335", colorDark: "sky-300" },
     { name: "Vue", href: "https://vuejs.org", colorLight: "#fbbc05", colorDark: "sky-300" },
     { name: "Node", href: "https://nodejs.org", colorLight: "#34a853", colorDark: "sky-300" },
-    { name: "Tailwind", href: "https://tailwindcss.com", colorLight: "#4285f4", colorDark: "sky-300" },
+    { name: "Godot", href: "https://godotengine.org", colorLight: "#4285f4", colorDark: "sky-300" },
   ];
 
   return (
