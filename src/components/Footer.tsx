@@ -7,8 +7,7 @@ interface FooterProps {
 export default function Footer({ isDarkMode }: FooterProps) {
   const leftLinks: ILink[]  = [
     { href: "https://2025.allenjynroyston.deno.net", label: "About" },
-    // { href: "https://2025.allenjynroyston.deno.net/experience", label: "Experience" },
-    // { href: "/projects", label: "Projects" }
+    { href: "https://jynovation-live.deno.dev", label: "Try Jyndows95 Today!" }
   ];
 
   const rightLinks: ILink[] = [
