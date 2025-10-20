@@ -73,7 +73,7 @@ export const getAllResults = (): ISearchResultPage[] => [
     description: "Built series of Flash games during the golden age of browser gaming. Early development work showcasing foundational programming skills. Still playable on Newgrounds!",
   },
   {
-    url: "/CV AUG 2025 v3.pdf",
+    url: "/allen_royston_cv_2025.pdf",
     title: "Allen Royston CV - Download Full Resume (PDF)",
     description: "Complete curriculum vitae detailing 12+ years professional experience, education (BA Psychology & Sociology), military service (OCS 1LT), and comprehensive skillset.",
   }
